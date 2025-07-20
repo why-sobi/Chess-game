@@ -1,0 +1,117 @@
+body{
+    background: url(https://images.unsplash.com/photo-1525947088131-b701cd0f6dc3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
+#board {
+    height: 560px;
+    width: 560px;
+    margin: 8vh;
+
+    position: absolute; /* to center a div without display flex or grid */
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+    display: grid;
+    grid-template-columns: repeat(8, 70px);
+    grid-template-rows: repeat(8, 70px);
+}
+
+.square:not(:empty):hover { /* not empty mean that the square has a child element */
+    background-color: #403E40;
+}
+
+.white {
+    background-color: #c7bf82;
+}
+
+.black {
+    background-color: #5c531b;
+}
+
+#board img, object {
+    width: 55px;
+    height: 55px;
+}
+
+#board svg {
+    width: 55px;
+    height: 55px;
+}
+
+.white-piece svg {
+    fill: white;
+}
+
+.black-piece svg {
+    fill: black;
+}
+
+.pieces {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 70px;
+    height: 70px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+
+}
+
+button svg {
+
+    height: 55px;
+    width: 55px;
+}
+
+
+
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: grey; /* Initial background color */
+    color: white; /* Text color */
+    
+    height: 70px;
+    width: 70px;
+    padding: 15px 32px; /* Padding */
+    
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    
+    cursor: pointer; /* Pointer cursor on hover */
+    animation: scale-out 0.3s forwards; /* Initial animation state */
+}
+
+@keyframes scale-out {
+    from {
+        transform: scale(1.1); /* Original size */
+    }
+    to {
+        transform: scale(1); /* Scale up to 110% */
+    }
+}
+
+button:hover {
+    background-color: darkslategrey; /* Change background color on hover */
+    animation: scale-in 0.3s forwards; /* Scale back to original size on hover */
+    z-index: 1;
+}
+
+@keyframes scale-in {
+    from {
+        transform: scale(1); /* Start from scaled size */
+    }
+    to {
+        transform: scale(1.1); /* Return to original size */
+    }
+}
